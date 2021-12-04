@@ -116,16 +116,15 @@ export default function WalletTab(props) {
         onSelect={(k) => setKey(k)}
       >
         <Tab eventKey="CoinBuy" title="Buy" className="text-center">
-          <DropdownNav InputLabel="Reffral Code" ButtunName="Copy" />
           <DropdownNav InputLabel="from" ButtunName="Submit" />
           <RiArrowUpDownFill size="30" className="dark-red" />
           <DropdownNav InputLabel="To" ButtunName="Submit" />
-          <Button variant="danger" className="w-100" onClick={() => buyToken()}>
+          <Button variant="danger" className="w-100 my-4" onClick={() => buyToken()}>
             Buy1
           </Button>
+          <DropdownNav InputLabel="Reffral Code" ButtunName="Copy" />
         </Tab>
         <Tab eventKey="CoinSell" title="Sell" className="text-center">
-          <DropdownNav InputLabel="Reffral Code" ButtunName="Copy" />
           <DropdownNav InputLabel="from" ButtunName="Submit" />
           <RiArrowUpDownFill size="30" className="dark-red" />
           <DropdownNav InputLabel="To" ButtunName="Submit" />
