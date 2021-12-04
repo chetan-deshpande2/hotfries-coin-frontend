@@ -46,21 +46,21 @@ export default function WalletTab(props) {
 
     if (networkId == 97) {
       const HFCTokenContract = new web3.eth.Contract(
-        HFCToken.abi,
-        "0xeECD604C8e9323049B600C2886F6df014df4bd6D"
+        HFCToken,
+        "0xAAa71B5648BE9a37227262BC764dcE3f6A78d8A7"
       );
       console.log(HFCTokenContract);
-      setHFCContractInstance(HFCTokenContract );
-      let supplyOfToken = await HFCTokenContract.methods.totalSupply().call();
-      console.log(supplyOfToken);
-      const supplyOfToken1 = await web3.utils.fromWei(supplyOfToken, "ether");
-      console.log(supplyOfToken1);
+      setHFCContractInstance(HFCTokenContract);
+      // let supplyOfToken = await HFCTokenContract.methods.totalSupply().call();
+      // console.log(supplyOfToken);
+      // const supplyOfToken1 = await web3.utils.fromWei(supplyOfToken, "ether");
+      // console.log(supplyOfToken1);
     }
   };
 
   const buyToken = async () => {
     const web3 = new Web3(window.ethereum);
-    const a = 0.1;
+    const a = 100000000000000000000;
     const ref = "0x0000000000000000000000000000000000000000";
 
     const amountofethinWei = await web3.utils.toWei(a.toString());
@@ -68,8 +68,7 @@ export default function WalletTab(props) {
     await HFCContractInstance.methods
       .buy(amountofethinWei, ref)
       .send({
-        from: account,
-        value: amountofethinWei,
+        from: account
       })
       .once("recepient", (recepient) => {
         console.log("success");
@@ -118,7 +117,7 @@ export default function WalletTab(props) {
           <DropdownNav InputLabel="from" />
           <RiArrowUpDownFill size="30" className="dark-red" />
           <DropdownNav InputLabel="To" />
-          <Button variant="danger" onClick={buyToken()}>
+          <Button variant="danger" onClick={() => buyToken()}>
             Buy1
           </Button>
         </Tab>
@@ -126,7 +125,7 @@ export default function WalletTab(props) {
           <DropdownNav InputLabel="from" />
           <RiArrowUpDownFill size="30" className="dark-red" />
           <DropdownNav InputLabel="To" />
-          <Button variant="danger" onClick={sellToken}>
+          <Button variant="danger" onClick={() => sellToken()}>
             Sell
           </Button>
         </Tab>
