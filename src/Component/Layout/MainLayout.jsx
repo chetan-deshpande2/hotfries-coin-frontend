@@ -9,7 +9,7 @@ export default function MainLayout() {
     return (
         <>
             <Header/>
-            <DarkMode/>
+            {/* <DarkMode/> */}
             <Home/>
             <Footer/>
         </>

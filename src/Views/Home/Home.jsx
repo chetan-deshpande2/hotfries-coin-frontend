@@ -45,9 +45,9 @@ export default function Home(props) {
         </Container>
       </section>
 
-      <section className="hwallete-sect">
+      <section className="hwallete-sect pt-5">
         <Container>
-          <Row className="d-flex justify-content-center py-5">
+          <Row className="d-flex justify-content-center">
             <Col md={5} className="">
               <div>
                 <WalletTab />
