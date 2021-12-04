@@ -89,8 +89,8 @@ body {
     .tab-content {
       padding: 1.5rem;
       border-radius: 0.5rem;
-      min-height: 200px;
       background-color: var(--color-bgwallet-mode);
+      min-height: 455px !important;
       box-shadow: 0px 1px 7px -1px #5c5c5cc9;
       .form-label {
         margin-bottom: 0.5rem;
