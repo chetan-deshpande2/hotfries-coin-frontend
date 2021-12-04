@@ -3,6 +3,7 @@ import { Navbar, Nav, Container, NavDropdown, Image } from "react-bootstrap";
 import logo from "../../assets/img/logo.png";
 import { Link } from "react-router-dom";
 import { ethers } from "ethers";
+import DarkMode from "./DarkMode";
 
 export default function Header(props) {
   const [scroll, setScroll] = useState(false);
@@ -62,6 +63,8 @@ export default function Header(props) {
             <Nav className="ms-auto">
               <Nav.Link href="#BuyNow">Buy Now</Nav.Link>
               <Nav.Link href="#Swap">Swap</Nav.Link>
+              <div id="google_translate_element"></div>
+              <DarkMode/> 
               <Nav.Link href="#link" onClick={connectWalletHandler}>
                 connect wallet :{defaultAccount}
               </Nav.Link>

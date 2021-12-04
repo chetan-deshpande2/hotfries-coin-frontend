@@ -5,7 +5,10 @@ html {
   --color-grey-mode: #919191;
   --color-bgwhite-mode: #0c0e1c;
   --color-bggallery-mode: #000000;
+  --color-midblack-mode: #ffffff;
   --bg-image-mode-wallet: url(../assets/img/coin-loc-darkmode.svg);
+  --bg-image-mode-wallet-2: url(../assets/img/wallet-bg-lite.svg);
+  --color-bgwallet-mode: #0e0e0eb3;
   // End Dark Mode Palletes
   --color-cod-grey: #080808;
   --color-grey: #919191;
@@ -26,7 +29,10 @@ html[data-theme="dark"] {
   --color-grey-mode: #212121;
   --color-bgwhite-mode: #ffffff;
   --color-bggallery-mode: #efefef;
+  --color-midblack-mode: #212121;
   --bg-image-mode-wallet: url(../assets/img/coin-loc-litemode.svg);
+  --bg-image-mode-wallet-2: url(../assets/img/wallet-bg-dark.svg);
+  --color-bgwallet-mode: #ffffff;
   // End Dark Mode Palletes
   --color-cod-grey: #080808;
   --color-dark-red: #da2b2b;

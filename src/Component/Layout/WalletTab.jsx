@@ -10,7 +10,7 @@ export default function WalletTab(props) {
   const [account, setAccount] = useState("");
   const [loading, setLoading] = useState(true);
   const [refresh, setrefresh] = useState(0);
-
+  const [key, setKey] = useState("CoinBuy");
   const [HFCContractInstance, setHFCContractInstance] = useState({});
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
@@ -68,7 +68,7 @@ export default function WalletTab(props) {
     await HFCContractInstance.methods
       .buy(amountofethinWei, ref)
       .send({
-        from: account
+        from: account,
       })
       .once("recepient", (recepient) => {
         console.log("success");
@@ -107,25 +107,33 @@ export default function WalletTab(props) {
   }, [refresh]);
 
   return (
-    <div className="wallet-tab">
+    <div className="wallet-tab pb-5">
       <Tabs
         defaultActiveKey="profile"
         id="uncontrolled-tab-example"
         className="mb-0"
+        activeKey={key}
+        onSelect={(k) => setKey(k)}
       >
         <Tab eventKey="CoinBuy" title="Buy" className="text-center">
-          <DropdownNav InputLabel="from" />
+          <DropdownNav InputLabel="Reffral Code" ButtunName="Copy" />
+          <DropdownNav InputLabel="from" ButtunName="Submit" />
           <RiArrowUpDownFill size="30" className="dark-red" />
-          <DropdownNav InputLabel="To" />
-          <Button variant="danger" onClick={() => buyToken()}>
+          <DropdownNav InputLabel="To" ButtunName="Submit" />
+          <Button variant="danger" className="w-100" onClick={() => buyToken()}>
             Buy1
           </Button>
         </Tab>
         <Tab eventKey="CoinSell" title="Sell" className="text-center">
-          <DropdownNav InputLabel="from" />
+          <DropdownNav InputLabel="Reffral Code" ButtunName="Copy" />
+          <DropdownNav InputLabel="from" ButtunName="Submit" />
           <RiArrowUpDownFill size="30" className="dark-red" />
-          <DropdownNav InputLabel="To" />
-          <Button variant="danger" onClick={() => sellToken()}>
+          <DropdownNav InputLabel="To" ButtunName="Submit" />
+          <Button
+            variant="danger"
+            className="w-100"
+            onClick={() => sellToken()}
+          >
             Sell
           </Button>
         </Tab>
@@ -134,10 +142,13 @@ export default function WalletTab(props) {
           title="Send Receive"
           className="text-center"
         >
-          <DropdownNav InputLabel="from" />
+          <DropdownNav InputLabel="Reffral Code" ButtunName="Copy" />
+          <DropdownNav InputLabel="from" ButtunName="Submit" />
           <RiArrowUpDownFill size="30" className="dark-red" />
-          <DropdownNav InputLabel="To" />
-          <Button variant="danger">Buy</Button>
+          <DropdownNav InputLabel="To" ButtunName="Submit" />
+          <Button variant="danger" className="w-100">
+            Buy
+          </Button>
         </Tab>
       </Tabs>
     </div>

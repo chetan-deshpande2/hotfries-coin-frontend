@@ -50,7 +50,7 @@ body {
   }
 }
 .hwallete-sect {
-  background-image: var(--bg-image-mode);
+  background-image: var(--bg-image-mode-wallet-2);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 -50px;
@@ -68,11 +68,11 @@ body {
           border: 0;
           border-top-left-radius: 0.5rem;
           border-top-right-radius: 0.5rem;
-          color: var(--color-dark);
-          background-color: #202020;
-          background-color: var(--color-gallery);
+          color: var(--color-midblack-mode);
+          background-color: var(--color-bgwallet-mode);
           font-weight: 500;
           text-transform: capitalize;
+          box-shadow: 0px -3px 8px -2px #5c5c5cc9;    
           &.active,
           &:hover,
           &:focus,
@@ -88,14 +88,13 @@ body {
     }
     .tab-content {
       padding: 1.5rem;
-      background-color: #202020;
       border-radius: 0.5rem;
       min-height: 200px;
-      background-color: var(--color-gallery);
-      box-shadow: 0px 0px 4px 0px #70707061;
+      background-color: var(--color-bgwallet-mode);
+      box-shadow: 0px 1px 7px -1px #5c5c5cc9;
       .form-label {
         margin-bottom: 0.5rem;
-        color: var(--color-dark);
+        color: var(--color-white-mode);
         font-size: calc(var(--font-size-base) - 0.125rem);
         font-weight: 400;
         text-transform: capitalize;
@@ -107,14 +106,20 @@ body {
         border: 1px solid var(--color-dark-red);
         box-shadow: none;
       }
-      .form-control {
-        font-size: 1rem;
-        font-weight: 400;
-        color: #878787;
-        background-color: #da2b2b12;
-        border: 1px solid var(--color-dark-red);
-        border-radius: 0.25rem;
-        box-shadow: none;
+      .input-group {
+
+        .form-control {
+          font-size: 1rem;
+          font-weight: 400;
+          color: #878787;
+          background-color: #da2b2b12;
+          border: 1px solid var(--color-dark-red);
+          border-radius: 0.25rem;
+          box-shadow: none;
+        }
+        .btn {
+          min-width: 120px;
+        }
       }
     }
   }

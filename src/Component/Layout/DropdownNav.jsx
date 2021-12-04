@@ -5,6 +5,7 @@ import {
   Dropdown,
   FormControl,
   Form,
+  Button  
 } from "react-bootstrap";
 import { useState } from "react";
 
@@ -17,7 +18,7 @@ export default function DropdownNav(props) {
   return (
     <div>
       <Form.Label htmlFor="basic-url">{props.InputLabel}</Form.Label>
-      <InputGroup className="mb-4">
+      {/* <InputGroup className="mb-4">
         <DropdownButton
           variant="outline-danger"
           title="Dropdown"
@@ -34,6 +35,17 @@ export default function DropdownNav(props) {
           placeholder="0"
           value={input}
         />
+      </InputGroup> */}
+      <InputGroup className="mb-4">
+        <FormControl
+          placeholder="0.0"
+          aria-label=""
+          aria-describedby="basic-addon2"
+          value={input}
+        />
+        <Button variant="danger" id="button-addon2">
+          {props.ButtunName}
+        </Button>
       </InputGroup>
     </div>
   );
